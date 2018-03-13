@@ -81,4 +81,13 @@ function login({ email, password, req }) {
   });
 }
 
-module.exports = { signup, login };
+// Logs user out. 
+//Takes a request object
+//Logs user out and returns the user.
+function logout(req) {
+    const { user } = req;
+    req.logout();
+    return user;
+}
+
+module.exports = { signup, login, logout };
